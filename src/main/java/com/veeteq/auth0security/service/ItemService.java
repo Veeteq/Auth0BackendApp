@@ -1,7 +1,8 @@
-package com.ey.gds.solutionarchitect.auth0security.service;
+package com.veeteq.auth0security.service;
 
-import com.ey.gds.solutionarchitect.auth0security.model.Item;
-import com.ey.gds.solutionarchitect.auth0security.repository.ItemRepository;
+import com.veeteq.auth0security.exception.ResourceNotFoundException;
+import com.veeteq.auth0security.model.Item;
+import com.veeteq.auth0security.repository.ItemRepository;
 import org.springframework.data.map.repository.config.EnableMapRepositories;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@EnableMapRepositories(basePackages = "com.ey.gds.solutionarchitect.auth0security.repository")
+@EnableMapRepositories(basePackages = "com.veeteq.auth0security.repository")
 public class ItemService {
   private final ItemRepository itemRepository;
 
@@ -51,7 +52,11 @@ public class ItemService {
             });
   }
 
-  public void delete(Long id) {
-    itemRepository.deleteById(id);
+  public void delete(Long id) throws ResourceNotFoundException {
+    Item savedItem = itemRepository
+            .findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Item not found for this id :: " + id));
+
+    itemRepository.delete(savedItem);
   }
 }

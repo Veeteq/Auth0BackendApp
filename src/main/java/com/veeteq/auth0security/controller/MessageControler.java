@@ -1,4 +1,4 @@
-package com.ey.gds.solutionarchitect.auth0security.controller;
+package com.veeteq.auth0security.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ey.gds.solutionarchitect.auth0security.dto.Message;
+import com.veeteq.auth0security.dto.Message;
 
 @RestController
 @RequestMapping(path = "/api", produces = MediaType.APPLICATION_JSON_VALUE)

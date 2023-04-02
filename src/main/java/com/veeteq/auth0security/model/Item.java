@@ -1,20 +1,20 @@
-package com.ey.gds.solutionarchitect.auth0security.model;
+package com.veeteq.auth0security.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
 import org.hibernate.validator.constraints.URL;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.keyvalue.annotation.KeySpace;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @KeySpace("items")
 public class Item {
   private final Long id;
 
   @NotNull(message = "name is required")
-  @Pattern(regexp="^[a-zA-Z ]+$", message = "name must be a string")
+  //@Pattern(regexp="^[a-zA-Z ]+$", message = "name must be a string")
   private final String name;
 
   @NotNull(message = "price is required")
@@ -22,7 +22,7 @@ public class Item {
   private final Long price;
 
   @NotNull(message = "description is required")
-  @Pattern(regexp="^[a-zA-Z ]+$", message = "description must be a string")
+  //@Pattern(regexp="^[a-zA-Z ]+$", message = "description must be a string")
   private final String description;
 
   @NotNull(message = "image is required")

@@ -1,4 +1,4 @@
-package com.ey.gds.solutionarchitect.auth0security.security;
+package com.veeteq.auth0security.security;
 
 import java.util.List;
 

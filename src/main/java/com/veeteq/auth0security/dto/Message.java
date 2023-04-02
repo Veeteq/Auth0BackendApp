@@ -1,4 +1,4 @@
-package com.ey.gds.solutionarchitect.auth0security.dto;
+package com.veeteq.auth0security.dto;
 
 public class Message {
 

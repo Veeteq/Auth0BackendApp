@@ -1,8 +1,8 @@
-package com.ey.gds.solutionarchitect.auth0security.dataloader;
+package com.veeteq.auth0security.dataloader;
 
-import com.ey.gds.solutionarchitect.auth0security.controller.ItemController;
-import com.ey.gds.solutionarchitect.auth0security.model.Item;
-import com.ey.gds.solutionarchitect.auth0security.repository.ItemRepository;
+import java.text.MessageFormat;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.text.MessageFormat;
-import java.util.List;
+import com.veeteq.auth0security.model.Item;
+import com.veeteq.auth0security.repository.ItemRepository;
 
 @Component
 public class DataLoader implements ApplicationRunner {

@@ -1,4 +1,4 @@
-package com.ey.gds.solutionarchitect.auth0security.security;
+package com.veeteq.auth0security.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

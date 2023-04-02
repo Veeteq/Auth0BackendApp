@@ -1,7 +1,8 @@
-package com.ey.gds.solutionarchitect.auth0security.controller;
+package com.veeteq.auth0security.controller;
 
-import com.ey.gds.solutionarchitect.auth0security.model.Item;
-import com.ey.gds.solutionarchitect.auth0security.service.ItemService;
+import com.veeteq.auth0security.exception.ResourceNotFoundException;
+import com.veeteq.auth0security.model.Item;
+import com.veeteq.auth0security.service.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,7 +88,7 @@ public class ItemController {
   }
 
   @DeleteMapping("/{id}")
-  public ResponseEntity<Item> delete(@PathVariable("id") Long id) {
+  public ResponseEntity<Item> delete(@PathVariable("id") Long id) throws ResourceNotFoundException {
     LOG.info("deleting the item with id: " + id);
 
     itemService.delete(id);
