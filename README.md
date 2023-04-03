@@ -1,4 +1,4 @@
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Veeteq/Auth0BackendApp/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Veeteq/Auth0BackendApp/tree/master)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Veeteq/BackendApp-Auth0/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Veeteq/BackendApp-Auth0/tree/master)
 
 
 # https://auth0.com/blog/spring-boot-java-tutorial-build-a-crud-api/
