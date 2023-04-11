@@ -1,5 +1,7 @@
 package com.veeteq.auth0security.controller;
 
+import com.veeteq.auth0security.config.CloudConfig;
+import com.veeteq.auth0security.dto.Message;
 import com.veeteq.auth0security.exception.ResourceNotFoundException;
 import com.veeteq.auth0security.model.Item;
 import com.veeteq.auth0security.service.ItemService;
@@ -29,12 +31,23 @@ public class ItemController {
   private final Logger LOG = LoggerFactory.getLogger(ItemController.class.getSimpleName());
 
   private final ItemService itemService;
-
+  private final CloudConfig cloudConfig;
+  
   @Autowired
-  public ItemController(ItemService itemService) {
+  public ItemController(CloudConfig cloudConfig,
+                        ItemService itemService) {
+  this.cloudConfig = cloudConfig;
     this.itemService = itemService;
   }
 
+  @GetMapping(path = "/message")
+  public ResponseEntity<Message> getMessage() {
+    LOG.info("retrieve configuration message");
+    
+    Message message = new Message(cloudConfig.getMessage());
+    return ResponseEntity.ok().body(message);
+  }
+  
   @GetMapping
   public ResponseEntity<List<Item>> findAll() {
     LOG.info("retrieve all items");
@@ -43,7 +56,7 @@ public class ItemController {
     return ResponseEntity.ok().body(items);
   }
 
-  @GetMapping("/{id}")
+  @GetMapping(path = "/{id}")
   public ResponseEntity<Item> find(@PathVariable("id") Long id) {
     LOG.info("retrieve item with id: " + id);
 
