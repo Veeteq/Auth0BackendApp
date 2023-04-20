@@ -7,7 +7,6 @@ RUN addgroup --system spring && adduser --system --group spring
 #Run the application as a non-root user.
 USER spring:spring
 
-
 #Add the application jar to the container
 COPY target/auth0-security-0.0.1-SNAPSHOT.jar app.jar
 
