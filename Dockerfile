@@ -8,7 +8,7 @@ RUN addgroup --system spring && adduser --system --group spring
 USER spring:spring
 
 #Add the application jar to the container
-COPY target/auth0-security-0.0.1-SNAPSHOT.jar app.jar
+COPY target/auth0-security.jar app.jar
 
 ENV AUTH0_AUDIENCE $AUTH0_AUDIENCE
 ENV AUTH0_DOMAIIN $AUTH0_DOMAIN
